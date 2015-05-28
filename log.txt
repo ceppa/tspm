@@ -1,0 +1,112 @@
+GNI!!!
+closed: 1
+edit: 1
+status: C
+performAction->sdr_ABC_Save
+sdr_status->C
+sdr_closed->0
+id_sdr->294
+numero->GHE 002/2013
+year->2013
+date->2013-01-16
+system_id->2
+originator->3
+defect_type->Input Box IOS-vw23 fail
+report_number->
+report_id->0
+critical_grade->3
+SS_ProcessorSystem(HostComputer)->1
+SS_InstructorOperatorStation(IOS)->2
+SS_InterfaceSystem->3
+SS_PowerSupplySystem->5
+SS_DigitalRadarLandMassSystem(DRLMS)->6
+SS_VisualConvertibleLaserDesignationPod(CLDP)->7
+SS_DomeDisplaySystem->9
+SS_ImageGeneratorSystem(IG)->11
+SS_ControlLoadingSystem->12
+SS_AirConditioningSupplyEquipment->14
+other_online_subsystems->
+sdr1->
+sdr1_id->0
+sdr2->
+sdr2_id->0
+A9a->All\'accensione dell\'apparato VideoWall, il monitor IOS-vw23 rimane spento e così pure la sua Input Box.
+A9b->Riavviata l\'Imput Box IOS-vw23, la situazione non cambia, rimane spenta.
+A9c->Input Box IOS-vw23.
+A9d->No
+A9e->No
+A9f->N/A
+defect_circumstance->3
+defect_date->2013-01-16
+defect_time->08:00
+A_org_rep_id->7
+A_prod_ass_man_id->3
+A_cust_rep_id->47
+prel_eval_prev->1
+prel_eval->1
+actions_or_note->Individuato il monitor IOS-vw23 spento e così pure la sua Input Box, si decide di sostituire quest\'ultima con un pezzo spare. 
+B_dev_org_chief_id->5
+B_prod_ass_man_id->3
+B_log_rep_id->7
+B_prog_man_id->4
+B_cust_rep_id->47
+C1a->-Monitor IOS-vw23 spento;
+-Input Box IOS-vw23 spenta;
+-riavvio dell\'Input Box IOS-vw23, che continua però a rimanere spenta;
+-sostituzione dell\'Input Box con una spare, il cui boot però rimane bloccato alla fase di inizializzazione \'Init ok\';
+-sostituzione dell\'Input Box con un ulteriore spare, funzionante correttamente.
+C1b->Sostituita l\'Input Box P/N 6751A150 S/N 305622:
+-prima con la spare S/N 305620, il cui boot però si è bloccato alla fase di inizializzazione \'Init ok\';
+-poi con la spare S/N 305407, il cui boot è stato completato e ha permesso al monito IOS-vw23 di riaccendersi.
+C1c->Il monitor IOS-vw23 riprende la sua corretta funzionalità.
+C1d->N/A
+restore_date->2013-01-16
+C_org_rep_id->7
+C_prod_ass_man_id->3
+C_cust_rep_id->47
+S_found_date->0000-00-00
+S_fixed_date->0000-00-00
+S_d_fsdr_date->0000-00-00
+S_d_ofts_date->0000-00-00
+S_d_eofts_date->0000-00-00
+S_ok_fsdr_date->0000-00-00
+S_ok_ofts_date->0000-00-00
+S_ok_eofts_date->0000-00-00
+S_suspended_date->0000-00-00
+S_canceled_date->0000-00-00
+S_sg_closed_date->0000-00-00
+S_impatto_addestrativo->0
+S_documento_di_test->
+S_id_test_e_passi_coinvolti->
+S_evoluzione_storica->
+S_posizione_sg->
+S_note->
+S_batch->
+S_reloaded_date->0000-00-00
+S_snag_rinominato_in->
+S_closed->----
+D1a->
+D1b->
+corrigible->-1
+D2a->
+D2b->
+actions_responsible_id->0
+actions_end_date->2013-02-08
+D3a->
+D3b->
+note->
+D_org_rep_id->0
+D_prod_ass_man_id->0
+D_cust_rep_id->0
+site_prefix->GHE
+S_da_chiudere_in_garanzia->0
+online_subsystems->23278
+
+UPDATE sdr SET year='2013',date='2013-01-16',system_id='2',site_prefix='GHE',originator='3',defect_type='Input Box IOS-vw23 fail',report_id='0',critical_grade='3',online_subsystems='23278',other_online_subsystems='',sdr1_id='0',sdr2_id='0',A9a='All\'accensione dell\'apparato VideoWall, il monitor IOS-vw23 rimane spento e così pure la sua Input Box.',A9b='Riavviata l\'Imput Box IOS-vw23, la situazione non cambia, rimane spenta.',A9c='Input Box IOS-vw23.',A9d='No',A9e='No',A9f='N/A',defect_circumstance='3',defect_date='2013-01-16',defect_time='08:00',A_org_rep_id='7',A_prod_ass_man_id='3',A_cust_rep_id='47',prel_eval='1',actions_or_note='Individuato il monitor IOS-vw23 spento e così pure la sua Input Box, si decide di sostituire quest\'ultima con un pezzo spare. ',B_dev_org_chief_id='5',B_prod_ass_man_id='3',B_log_rep_id='7',B_prog_man_id='4',B_cust_rep_id='47',C1a='-Monitor IOS-vw23 spento;
+-Input Box IOS-vw23 spenta;
+-riavvio dell\'Input Box IOS-vw23, che continua però a rimanere spenta;
+-sostituzione dell\'Input Box con una spare, il cui boot però rimane bloccato alla fase di inizializzazione \'Init ok\';
+-sostituzione dell\'Input Box con un ulteriore spare, funzionante correttamente.',C1b='Sostituita l\'Input Box P/N 6751A150 S/N 305622:
+-prima con la spare S/N 305620, il cui boot però si è bloccato alla fase di inizializzazione \'Init ok\';
+-poi con la spare S/N 305407, il cui boot è stato completato e ha permesso al monito IOS-vw23 di riaccendersi.',C1c='Il monitor IOS-vw23 riprende la sua corretta funzionalità.',C1d='N/A',restore_date='2013-01-16',C_org_rep_id='7',C_prod_ass_man_id='3',C_cust_rep_id='47',D1a='',D1b='',corrigible='-1',D2a='',D2b='',actions_end_date='2013-02-08',actions_responsible_id='0',D3a='',D3b='',note='',D_org_rep_id='0',D_prod_ass_man_id='0',D_cust_rep_id='0',status='C',closed='1' WHERE id='294'
+ginolatino 1

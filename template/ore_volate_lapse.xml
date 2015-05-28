@@ -1,0 +1,451 @@
+<?
+$string='<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+	xmlns:o="urn:schemas-microsoft-com:office:office"
+	xmlns:x="urn:schemas-microsoft-com:office:excel"
+	xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+	xmlns:html="http://www.w3.org/TR/REC-html40"
+	xmlns:x2="http://schemas.microsoft.com/office/excel/2003/xml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+		<LastAuthor>Nicola Toniazzi</LastAuthor>
+		<Created>2010-02-04T14:00:13Z</Created>
+		<Version>11.9999</Version>
+	</DocumentProperties>
+	<OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+		<Colors>
+			<Color>
+				<Index>4</Index>
+				<RGB>#99CCFF</RGB>
+			</Color>
+			<Color>
+				<Index>5</Index>
+				<RGB>#C0C0C0</RGB>
+			</Color>
+			<Color>
+				<Index>6</Index>
+				<RGB>#CCFFCC</RGB>
+			</Color>
+			<Color>
+				<Index>7</Index>
+				<RGB>#CCFFFF</RGB>
+			</Color>
+			<Color>
+				<Index>8</Index>
+				<RGB>#FF0000</RGB>
+			</Color>
+			<Color>
+				<Index>9</Index>
+				<RGB>#FF99CC</RGB>
+			</Color>
+			<Color>
+				<Index>10</Index>
+				<RGB>#FFCC99</RGB>
+			</Color>
+			<Color>
+				<Index>11</Index>
+				<RGB>#FFFF99</RGB>
+			</Color>
+		</Colors>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+		<WindowHeight>9000</WindowHeight>
+		<WindowWidth>13860</WindowWidth>
+		<WindowTopX>240</WindowTopX>
+		<WindowTopY>75</WindowTopY>
+		<ProtectStructure>False</ProtectStructure>
+		<ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+		<Style ss:ID="Default" ss:Name="Normal">
+			<Alignment ss:Vertical="Bottom"/>
+			<Borders/>
+			<Font/>
+			<Interior/>
+			<NumberFormat/>
+			<Protection/>
+		</Style>
+		<Style ss:ID="s21" ss:Name="Default">
+		</Style>
+		<Style ss:ID="m94284532" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#FFFF99" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="Fixed"/>
+		</Style>
+		<Style ss:ID="m94284542" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#FFCC99" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="Fixed"/>
+		</Style>
+		<Style ss:ID="m94297980" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana" ss:Bold="1"/>
+			<Interior ss:Color="#99CCFF" ss:Pattern="Solid"/>
+		</Style>
+		<Style ss:ID="m94297990" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#CCFFFF" ss:Pattern="Solid"/>
+			<NumberFormat/>
+		</Style>
+		<Style ss:ID="m94298000" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#FF99CC" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="Fixed"/>
+		</Style>
+		<Style ss:ID="m94298010" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="Fixed"/>
+		</Style>
+		<Style ss:ID="s23" ss:Parent="s21">
+			<Font ss:FontName="Verdana" x:Family="Swiss"/>
+		</Style>
+		<Style ss:ID="s24" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Font ss:FontName="Verdana" x:Family="Swiss" ss:Bold="1"/>
+		</Style>
+		<Style ss:ID="s65" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Font ss:FontName="Verdana" x:Family="Swiss"/>
+		</Style>
+		<Style ss:ID="s66" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#CCFFFF" ss:Pattern="Solid"/>
+		</Style>
+		<Style ss:ID="s67" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders/>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#FFFF99" ss:Pattern="Solid"/>
+		</Style>
+		<Style ss:ID="s68" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders/>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#CCFFCC" ss:Pattern="Solid"/>
+		</Style>
+		<Style ss:ID="s69" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#FFCC99" ss:Pattern="Solid"/>
+		</Style>
+		<Style ss:ID="s70" ss:Parent="s21">
+			<Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+		</Style>
+		<Style ss:ID="s71" ss:Parent="s21">
+			<Borders/>
+			<Font ss:FontName="Verdana"/>
+		</Style>
+		<Style ss:ID="s72" ss:Parent="s21">
+			<Borders>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+		</Style>
+		<Style ss:ID="s73" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#CCFFFF" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="0"/>
+		</Style>
+		<Style ss:ID="s74" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders/>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#FFFF99" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="0"/>
+		</Style>
+		<Style ss:ID="s75" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders/>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#CCFFCC" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="0"/>
+		</Style>
+		<Style ss:ID="s76" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#FFCC99" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="0"/>
+		</Style>
+		<Style ss:ID="s77" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#CCFFFF" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="Fixed"/>
+		</Style>
+		<Style ss:ID="s78" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders/>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#FFFF99" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="Fixed"/>
+		</Style>
+		<Style ss:ID="s79" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders/>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#CCFFCC" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="Fixed"/>
+		</Style>
+		<Style ss:ID="s80" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#FFCC99" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="Fixed"/>
+		</Style>
+		<Style ss:ID="s81" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+		</Style>
+		<Style ss:ID="s82" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders/>
+			<Font ss:FontName="Verdana"/>
+			<NumberFormat ss:Format="Fixed"/>
+		</Style>
+		<Style ss:ID="s83" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders/>
+			<Font ss:FontName="Verdana"/>
+		</Style>
+		<Style ss:ID="s84" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+		</Style>
+		<Style ss:ID="s85" ss:Parent="s21">
+			<Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+			<Font ss:FontName="Verdana" x:Family="Swiss"/>
+		</Style>
+		<Style ss:ID="s86" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#CCFFFF" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="Percent"/>
+		</Style>
+		<Style ss:ID="s87" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders/>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#FFFF99" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="Percent"/>
+		</Style>
+		<Style ss:ID="s88" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders/>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#CCFFCC" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="Percent"/>
+		</Style>
+		<Style ss:ID="s89" ss:Parent="s21">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+			<Borders>
+				<Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+				 ss:Color="#000000"/>
+			</Borders>
+			<Font ss:FontName="Verdana"/>
+			<Interior ss:Color="#FFCC99" ss:Pattern="Solid"/>
+			<NumberFormat ss:Format="Percent"/>
+		</Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+		<Table ss:StyleID="s21">
+			<Column ss:StyleID="s23" ss:Width="250" />
+			<Column ss:StyleID="s21" ss:Width="64.5" />
+			<Column ss:StyleID="s21" ss:Width="64.5" />
+			<Row ss:AutoFitHeight="0">
+				<Cell ss:StyleID="m94297980"><Data ss:Type="String">Ore Volate '.$da.'->' .$a.'</Data></Cell>
+				<Cell ss:StyleID="m94297980"><Data ss:Type="String">OFTS</Data></Cell>
+				<Cell ss:StyleID="m94297980"><Data ss:Type="String">E-OFTS</Data></Cell>
+				<Cell ss:StyleID="m94297980"><Data ss:Type="String">Total</Data></Cell>
+			</Row>
+			<Row ss:AutoFitHeight="0">
+				<Cell><Data ss:Type="String">Missioni</Data></Cell>
+				<Cell ss:StyleID="s66"><Data ss:Type="Number">'.$vals[0]["TM"].'</Data></Cell>
+				<Cell ss:StyleID="s66"><Data ss:Type="Number">'.$vals[1]["TM"].'</Data></Cell>
+				<Cell ss:StyleID="s66" ss:Formula="=RC[-1]+RC[-2]"></Cell>
+			</Row>
+			<Row ss:AutoFitHeight="0">
+				<Cell><Data ss:Type="String">Ready for Use [U]</Data></Cell>
+				<Cell ss:StyleID="s77"><Data ss:Type="Number">'.($vals[0]["U"]/60).'</Data></Cell>
+				<Cell ss:StyleID="s77"><Data ss:Type="Number">'.($vals[1]["U"]/60).'</Data></Cell>
+				<Cell ss:StyleID="s77" ss:Formula="=RC[-1]+RC[-2]"></Cell>
+			</Row>
+			<Row ss:AutoFitHeight="0">
+				<Cell><Data ss:Type="String">Training [T]</Data></Cell>
+				<Cell ss:StyleID="s77"><Data ss:Type="Number">'.($vals[0]["T"]/60).'</Data></Cell>
+				<Cell ss:StyleID="s77"><Data ss:Type="Number">'.($vals[1]["T"]/60).'</Data></Cell>
+				<Cell ss:StyleID="s77" ss:Formula="=RC[-1]+RC[-2]"></Cell>
+			</Row>
+			<Row ss:AutoFitHeight="0">
+				<Cell><Data ss:Type="String">Ore Volate [A]</Data></Cell>
+				<Cell ss:StyleID="s77"><Data ss:Type="Number">'.($vals[0]["A"]/60).'</Data></Cell>
+				<Cell ss:StyleID="s77"><Data ss:Type="Number">'.($vals[1]["A"]/60).'</Data></Cell>
+				<Cell ss:StyleID="s77" ss:Formula="=RC[-1]+RC[-2]"></Cell>
+			</Row>
+			<Row ss:AutoFitHeight="0">
+				<Cell><Data ss:Type="String">Disponibilità [W]-[E]</Data></Cell>
+				<Cell ss:StyleID="s77"><Data ss:Type="Number">'.(($vals[0]["W"]-$vals[0]["E"])/60).'</Data></Cell>
+				<Cell ss:StyleID="s77"><Data ss:Type="Number">'.(($vals[1]["W"]-$vals[1]["E"])/60).'</Data></Cell>
+				<Cell ss:StyleID="s77" ss:Formula="=RC[-1]+RC[-2]"></Cell>
+			</Row>
+			<Row ss:AutoFitHeight="0">
+				<Cell ss:Index="2" ss:StyleID="s81"/>
+				<Cell ss:StyleID="s81"/>
+			</Row>
+			<Row ss:AutoFitHeight="0">
+				<Cell ss:StyleID="s85"><Data ss:Type="String">% Volato [A]/[W]-[E]*100</Data></Cell>
+				<Cell ss:StyleID="s86" ss:Formula="=IF(R[-2]C=0,0,R[-3]C/R[-2]C)"> </Cell>
+				<Cell ss:StyleID="s86" ss:Formula="=IF(R[-2]C=0,0,R[-3]C/R[-2]C)"> </Cell>
+				<Cell ss:StyleID="s86" ss:Formula="=IF(R[-2]C=0,0,R[-3]C/R[-2]C)"> </Cell>
+			</Row>
+			<Row ss:AutoFitHeight="0">
+				<Cell ss:StyleID="s85"><Data ss:Type="String">% Affidabilità [U]/[W]-[E]*100</Data></Cell>
+				<Cell ss:StyleID="s86" ss:Formula="=IF(R[-3]C=0,0,R[-6]C/R[-3]C)"> </Cell>
+				<Cell ss:StyleID="s86" ss:Formula="=IF(R[-3]C=0,0,R[-6]C/R[-3]C)"> </Cell>
+				<Cell ss:StyleID="s86" ss:Formula="=IF(R[-3]C=0,0,R[-6]C/R[-3]C)"> </Cell>
+			</Row>
+			<Row>
+				<Cell ss:StyleID="s85"><Data ss:Type="String">% Efficacia [T]/[A]*100</Data></Cell>
+				<Cell ss:StyleID="s86" ss:Formula="=IF(R[-5]C=0,0,R[-6]C/R[-5]C)"> </Cell>
+				<Cell ss:StyleID="s86" ss:Formula="=IF(R[-5]C=0,0,R[-6]C/R[-5]C)"> </Cell>
+				<Cell ss:StyleID="s86" ss:Formula="=IF(R[-5]C=0,0,R[-6]C/R[-5]C)"> </Cell>
+			</Row>
+		</Table>
+		<WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+			<PageSetup>
+				<PageMargins x:Bottom="0.984251969" x:Left="0.78740157499999996"
+				 x:Right="0.78740157499999996" x:Top="0.984251969"/>
+			</PageSetup>
+			<Print>
+				<ValidPrinterInfo/>
+				<PaperSizeIndex>9</PaperSizeIndex>
+				<HorizontalResolution>600</HorizontalResolution>
+				<VerticalResolution>600</VerticalResolution>
+			</Print>
+			<Selected/>
+			<Panes>
+				<Pane>
+				 <Number>3</Number>
+				 <ActiveRow>23</ActiveRow>
+				 <ActiveCol>4</ActiveCol>
+				</Pane>
+			</Panes>
+			<ProtectObjects>False</ProtectObjects>
+			<ProtectScenarios>False</ProtectScenarios>
+		</WorksheetOptions>
+		<x:WorksheetOptions/>
+	</Worksheet>
+</Workbook>';
+?>
