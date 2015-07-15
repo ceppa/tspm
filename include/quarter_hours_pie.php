@@ -1,4 +1,4 @@
-<?
+<?php
 
 	require_once("jpgraph/jpgraph.php");
 	require_once("jpgraph/jpgraph_pie.php");
@@ -96,6 +96,12 @@
 	}
 	unset($values);
 
+if(($data['Training Time']===0)
+		&&($data['Free Slot Time']===0)
+		&&($data['Excl']===0)
+		&&($data['[PM] Preventive Maintenance']===0)
+		&&($data['[CM] Corrective Maintenance']===0))
+	$data['Empty']=1;
 $totale=array_sum($data);
 // Create the graph. These two calls are always required
 $graph = new PieGraph(800,500,"auto"); 

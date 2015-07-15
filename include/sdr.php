@@ -1,4 +1,4 @@
-<?
+<?php
 	require_once("include/sdr_const.php");
 	if($_SESSION["livello"]==0)
 		die("not allowed");
@@ -148,7 +148,7 @@
 		<input type="hidden" 
 				value="<?=(int)$valori["closed"]?>" 
 				name="sdr_closed" />
-			<?
+			<?php
 			if($op=="edit_sdr")
 			{?>
 		<input type="hidden" 
@@ -157,7 +157,8 @@
 		<input type="hidden"
 			value="<?=$numero?>" 
 			name="numero" />
-			<?}?>
+			<?php
+			}?>
 		<table class="plot" id="sections">
 			<tr <?=$locked_row?>>
 				<td class="right">anno</td>
@@ -180,7 +181,7 @@
 						value="<?=$valori["date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$A_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -188,7 +189,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("SDR_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr id="Section_A" title="Section_A" class="header">
@@ -202,7 +204,7 @@
 			<tr title="Section_A" style="display:none"<?=$locked_row?>>
 				<td class="right">sistema</td>
 				<td class="left">
-				<?
+				<?php
 				if($A_locked)
 				{
 					$systemsString="";
@@ -215,11 +217,12 @@
 							name="system_id"
 							value="<?=$valori["system_id"]?>" />
 						<b><?=$systemsString?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<div id="system_id" style="border: 0px solid red">
-				<?
+				<?php
 					foreach($simulators as $id=>$system)
 					{?>
 						<input type="checkbox" 
@@ -228,35 +231,40 @@
 								value="<?=$id?>"
 							<?=($valori["system_id"] & $id?" checked='checked'":"")?>/>
 								<?=$system["name"]?>
-					<?}?>
+					<?php
+					}?>
 					</div>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_A" style="display:none"<?=$locked_row?>>
 				<td class="right">Originatore</td>
 				<td class="left">
-			<?
+			<?php
 				if($A_locked)
 				{?>
 					<input type="hidden" 
 						name="critical_grade"
 						value="<?=$valori["originator"]?>" />
 						<b><?=$originators[$valori["originator"]]?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select id="originator"
 						name="originator">
-					<?
+					<?php
 						foreach($originators as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["originator"]==$id?" selected='selected'":"")?>>
 							<?=$value?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_A" style="display:none"<?=$locked_row?>>
@@ -293,33 +301,36 @@
 			<tr title="Section_A" style="display:none"<?=$locked_row?>>
 				<td class="right">criticità</td>
 				<td class="left">
-			<?
+			<?php
 				if($A_locked)
 				{?>
 					<input type="hidden" 
 						name="critical_grade"
 						value="<?=$valori["critical_grade"]?>" />
 						<b><?=$critical_grades[$valori["critical_grade"]]?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="critical_grade"
 						id="critical_grade">
-					<?
+					<?php
 						foreach($critical_grades as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["critical_grade"]==$id?" selected='selected'":"")?>>
 							<?=$value?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_A" style="display:none"<?=$locked_row?>>
 				<td class="right">sottosistemi attivi</td>
 				<td class="left">
-				<?
+				<?php
 					foreach($subSystems as $id=>$value)
 					{
 						$checked=($valori["online_subsystems"]&(1<<$id)?" checked='checked'":"");
@@ -329,7 +340,8 @@
 						<input type="checkbox"
 							name="SS_<?=$k;?>"
 							value="<?=$id;?>"<?=$check_locked?><?=$checked?> /><?=$value;?><br/>
-					<?}
+					<?php
+					}
 					$checked=($valori["online_subsystems"]&(1<<17)?" checked='checked'":"");
 				?>
 					<input type="checkbox" 
@@ -446,27 +458,30 @@
 				<td class="right">circostanza nella quale<br/>
 						si è presentato il difetto</td>
 				<td class="left">
-			<?
+			<?php
 				if($A_locked)
 				{?>
 					<input type="hidden" 
 						name="critical_grade"
 						value="<?=$valori["defect_circumstance"]?>" />
 						<b><?=$circumstances[$valori["defect_circumstance"]]?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select id="defect_circumstance"
 						name="defect_circumstance">
-					<?
+					<?php
 						foreach($circumstances as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["defect_circumstance"]==$id?" selected='selected'":"")?>>
 							<?=$value?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_A" style="display:none"<?=$locked_row?>>
@@ -479,7 +494,7 @@
 						value="<?=$valori["defect_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$A_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -487,7 +502,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("defect_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_A" style="display:none"<?=$locked_row?>>
@@ -506,7 +522,7 @@
 			<tr title="Section_A" style="display:none"<?=$locked_row?>>
 				<td class="right">Organization Representative</td>
 				<td class="left">
-			<?
+			<?php
 				if($A_locked)
 				{
 					$value=$personale_ga[$valori["A_org_rep_id"]];
@@ -517,28 +533,31 @@
 						value="<?=$valori["A_org_rep_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="A_org_rep_id" id="A_org_rep_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ga as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["A_org_rep_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_A" style="display:none"<?=$locked_row?>>
 				<td class="right">Product Assurrance Manager</td>
 				<td class="left">
-			<?
+			<?php
 				if($A_locked)
 				{
 					$value=$personale_ga[$valori["A_prod_ass_man_id"]];
@@ -549,28 +568,31 @@
 						value="<?=$valori["A_prod_ass_man_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="A_prod_ass_man_id" id="A_prod_ass_man_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ga as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["A_prod_ass_man_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_A" style="display:none"<?=$locked_row?>>
 				<td class="right">Customer Representative</td>
 				<td class="left">
-			<?
+			<?php
 				if($A_locked)
 				{
 					$value=$personale_ga[$valori["A_cust_rep_id"]];
@@ -581,22 +603,25 @@
 						value="<?=$valori["A_cust_rep_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="A_cust_rep_id" id="A_cust_rep_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ami as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["A_cust_rep_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_A" style="display:none"
@@ -615,7 +640,7 @@
 				</td>
 			</tr>
 
-<?
+<?php
 	$B_locked=(($_SESSION["livello"]!=1)&&($valori["B_signed"]==1)?1:0);
 	$locked_row=($B_locked?" class='locked'":"");
 	$check_locked=($B_locked?" onclick='this.blur();return false;'":"");
@@ -632,14 +657,15 @@
 			<tr title="Section_B" style="display:none"<?=$locked_row?>>
 				<td class="right">valutazione preliminare</td>
 				<td class="left">
-				<?
+				<?php
 				if($B_locked)
 				{?>
 					<input type="hidden"
 							name="prel_eval"
 							value="<?=$valori["prel_eval"]?>" />
 						<b><?=$prel_evals[$valori["prel_aval"]]?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<input type="hidden"
@@ -648,41 +674,46 @@
 					<select name="prel_eval" 
 						id="prel_eval" 
 						onchange="showRelevantSections(this.value,<?=(int)$_SESSION["livello"]?>)">
-				<?
+				<?php
 					foreach($prel_evals as $id=>$value)
 					{?>
 						<option value="<?=$id?>"<?=($valori["prel_eval"]==$id?" selected='selected'":"")?>>
 							<?=$value?>
 						</option>
-					<?}?>
+					<?php
+					}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_B" id="actions_or_note" style="display:none" <?=$locked_row?>>
 				<td style="text-align:right">
 					azioni o note
 				</td>
-				<?if($B_locked)
+				<?php
+				if($B_locked)
 				{?>
 					<td style="text-align:left;background-color:#fff;">
 					<input type="hidden" name="actions_or_note" value="<?=$valori["actions_or_note"]?>" />
 					<div style="background-color:#FFF"><b><?=str_replace("\n","<br/>",$valori["actions_or_note"])?></b>
 					</div>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<td style="text-align:left;">
 					<textarea name="actions_or_note" cols="40"
 							rows="6"
 							class="input"<?=$input_locked?>><?=$valori["actions_or_note"]?></textarea>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_B" style="display:none"<?=$locked_row?>>
 				<td class="right">Development Organization Chief</td>
 				<td class="left">
-			<?
+			<?php
 				if($B_locked)
 				{
 					$value=$personale_ga[$valori["B_dev_org_chief_id"]];
@@ -693,28 +724,31 @@
 						value="<?=$valori["B_dev_org_chief_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="B_dev_org_chief_id" id="B_dev_org_chief_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ga as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["B_dev_org_chief_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_B" style="display:none"<?=$locked_row?>>
 				<td class="right">Product Assurrance Manager</td>
 				<td class="left">
-			<?
+			<?php
 				if($B_locked)
 				{
 					$value=$personale_ga[$valori["B_prod_ass_man_id"]];
@@ -725,28 +759,31 @@
 						value="<?=$valori["B_prod_ass_man_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="B_prod_ass_man_id" id="B_prod_ass_man_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ga as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["B_prod_ass_man_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_B" style="display:none"<?=$locked_row?>>
 				<td class="right">Logistic Representative</td>
 				<td class="left">
-			<?
+			<?php
 				if($B_locked)
 				{
 					$value=$personale_ga[$valori["B_log_rep_id"]];
@@ -757,28 +794,31 @@
 						value="<?=$valori["B_log_rep_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="B_log_rep_id" id="B_log_rep_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ga as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["B_log_rep_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_B" style="display:none"<?=$locked_row?>>
 				<td class="right">Program Manager</td>
 				<td class="left">
-			<?
+			<?php
 				if($B_locked)
 				{
 					$value=$personale_ga[$valori["B_prog_man_id"]];
@@ -789,28 +829,31 @@
 						value="<?=$valori["B_prog_man_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="B_prog_man_id" id="B_prog_man_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ga as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["B_prog_man_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_B" style="display:none"<?=$locked_row?>>
 				<td class="right">Customer Representative</td>
 				<td class="left">
-			<?
+			<?php
 				if($B_locked)
 				{
 					$value=$personale_ga[$valori["B_cust_rep_id"]];
@@ -821,22 +864,25 @@
 						value="<?=$valori["B_cust_rep_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="B_cust_rep_id" id="B_cust_rep_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ami as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["B_cust_rep_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_B" style="display:none"
@@ -855,7 +901,7 @@
 				</td>
 			</tr>
 
-<?
+<?php
 	$C_locked=(($_SESSION["livello"]!=1)&&($valori["C_signed"]==1)?1:0);
 	$locked_row=($C_locked?" class='locked'":"");
 	$check_locked=($C_locked?" onclick='this.blur();return false;'":"");
@@ -876,20 +922,24 @@
 				<td style="text-align:right">
 					ricerca guasti
 				</td>
-				<?if($C_locked)
+				<?php
+				if($C_locked)
 				{?>
 					<td style="text-align:left;background-color:#fff;">
 					<input type="hidden" name="C1a" value="<?=$valori["C1a"]?>" />
 					<div style="background-color:#FFF"><b><?=str_replace("\n","<br/>",$valori["C1a"])?></b>
 					</div>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<td style="text-align:left;">
 					<textarea name="C1a" cols="40"
 							rows="6"
 							class="input"<?=$input_locked?>><?=$valori["C1a"]?></textarea>
-				<?}?>
+				<?php
+				}
+				?>
 				</td>
 			</tr>
 			<tr title="Section_C" style="display:none" <?=$locked_row?>>
@@ -897,20 +947,23 @@
 					riparazioni e parti<br/>
 					di ricambio usate
 				</td>
-				<?if($C_locked)
+				<?php
+				if($C_locked)
 				{?>
 					<td style="text-align:left;background-color:#fff;">
 					<input type="hidden" name="C1b" value="<?=$valori["C1b"]?>" />
 					<div style="background-color:#FFF"><b><?=str_replace("\n","<br/>",$valori["C1b"])?></b>
 					</div>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<td style="text-align:left;">
 					<textarea name="C1b" cols="40"
 							rows="6"
 							class="input"<?=$input_locked?>><?=$valori["C1b"]?></textarea>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_C" style="display:none" <?=$locked_row?>>
@@ -918,40 +971,46 @@
 					regolazioni e<br/>
 					verifiche effettuate
 				</td>
-				<?if($C_locked)
+				<?php
+				if($C_locked)
 				{?>
 					<td style="text-align:left;background-color:#fff;">
 					<input type="hidden" name="C1c" value="<?=$valori["C1c"]?>" />
 					<div style="background-color:#FFF"><b><?=str_replace("\n","<br/>",$valori["C1c"])?></b>
 					</div>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<td style="text-align:left;">
 					<textarea name="C1c" cols="40"
 							rows="6"
 							class="input"<?=$input_locked?>><?=$valori["C1c"]?></textarea>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_C" style="display:none" <?=$locked_row?>>
 				<td style="text-align:right">
 					note
 				</td>
-				<?if($C_locked)
+				<?php
+				if($C_locked)
 				{?>
 					<td style="text-align:left;background-color:#fff;">
 					<input type="hidden" name="C1d" value="<?=$valori["C1d"]?>" />
 					<div style="background-color:#FFF"><b><?=str_replace("\n","<br/>",$valori["C1d"])?></b>
 					</div>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<td style="text-align:left;">
 					<textarea name="C1d" cols="40"
 							rows="6"
 							class="input"<?=$input_locked?>><?=$valori["C1d"]?></textarea>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_C" style="display:none" <?=$locked_row?>>
@@ -964,7 +1023,7 @@
 						value="<?=$valori["restore_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$C_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -972,13 +1031,14 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("restore_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_C" style="display:none"<?=$locked_row?>>
 				<td class="right">Organization Representative</td>
 				<td class="left">
-			<?
+			<?php
 				if($C_locked)
 				{
 					$value=$personale_ga[$valori["C_org_rep_id"]];
@@ -989,28 +1049,31 @@
 						value="<?=$valori["C_org_rep_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="C_org_rep_id" id="C_org_rep_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ga as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["C_org_rep_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_C" style="display:none"<?=$locked_row?>>
 				<td class="right">Product Assurrance Manager</td>
 				<td class="left">
-			<?
+			<?php
 				if($C_locked)
 				{
 					$value=$personale_ga[$valori["C_prod_ass_man_id"]];
@@ -1021,28 +1084,31 @@
 						value="<?=$valori["C_prod_ass_man_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="C_prod_ass_man_id" id="C_prod_ass_man_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ga as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["C_prod_ass_man_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_C" style="display:none"<?=$locked_row?>>
 				<td class="right">Customer Representative</td>
 				<td class="left">
-			<?
+			<?php
 				if($C_locked)
 				{
 					$value=$personale_ga[$valori["C_cust_rep_id"]];
@@ -1053,22 +1119,25 @@
 						value="<?=$valori["C_cust_rep_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="C_cust_rep_id" id="C_cust_rep_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ami as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["C_cust_rep_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_C" style="display:none"
@@ -1086,7 +1155,7 @@
 						onclick="if(check_post_sdr(this)) submit();"/>
 				</td>
 			</tr>
-<?
+<?php
 	$S_locked=(($_SESSION["livello"]<1)?1:0);
 	$locked_row=($S_locked?" class='locked'":"");
 	$check_locked=($S_locked?" onclick='this.blur();return false;'":"");
@@ -1114,7 +1183,7 @@
 						value="<?=$valori["S_found_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$S_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1122,7 +1191,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("S_found_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_S" id="S_fixed_date_row"
@@ -1136,7 +1206,7 @@
 						value="<?=$valori["S_fixed_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$S_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1144,7 +1214,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("S_fixed_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_S" id="S_d_fsdr_date_row"
@@ -1158,7 +1229,7 @@
 						value="<?=$valori["S_d_fsdr_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$S_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1166,7 +1237,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("S_d_fsdr_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_S" id="S_d_ofts_date_row"
@@ -1180,7 +1252,7 @@
 						value="<?=$valori["S_d_ofts_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$S_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1188,7 +1260,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("S_d_ofts_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_S" id="S_d_eofts_date_row"
@@ -1202,7 +1275,7 @@
 						value="<?=$valori["S_d_eofts_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$S_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1210,7 +1283,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("S_d_eofts_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_S" id="S_ok_fsdr_date_row"
@@ -1224,7 +1298,7 @@
 						value="<?=$valori["S_ok_fsdr_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$S_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1232,7 +1306,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("S_ok_fsdr_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_S" id="S_ok_ofts_date_row"
@@ -1246,7 +1321,7 @@
 						value="<?=$valori["S_ok_ofts_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$S_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1254,7 +1329,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("S_ok_ofts_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_S" id="S_ok_eofts_date_row"
@@ -1268,7 +1344,7 @@
 						value="<?=$valori["S_ok_eofts_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$S_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1276,7 +1352,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("S_ok_eofts_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_S" id="S_suspended_date_row"
@@ -1290,7 +1367,7 @@
 						value="<?=$valori["S_suspended_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$S_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1298,7 +1375,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("S_suspended_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_S" id="S_canceled_date_row"
@@ -1312,7 +1390,7 @@
 						value="<?=$valori["S_canceled_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$S_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1320,7 +1398,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("S_canceled_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_S" id="S_sg_closed_date_row"
@@ -1334,7 +1413,7 @@
 						value="<?=$valori["S_sg_closed_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$S_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1342,40 +1421,44 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("S_sg_closed_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_S" style="display:none"<?=$locked_row?>>
 				<td class="right">Impatto addestrativo</td>
 				<td class="left">
-			<?
+			<?php
 				if($S_locked)
 				{?>
 					<input type="hidden" 
 						name="S_impatto_addestrativo"
 						value="<?=$valori["S_impatto_addestrativo"]?>" />
 						<b><?=$impatto_addestrativo_text[$valori["S_impatto_addestrativo"]]?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select id="S_impatto_addestrativo"
 						name="S_impatto_addestrativo">
-					<?
+					<?php
 						foreach($impatto_addestrativo_text as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["S_impatto_addestrativo"]==$id?
 							" selected='selected'":"")?>>
 							<?=$value?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_S" style="display:none"<?=$locked_row?>>
 				<td class="right">Da chiudere in garanzia</td>
 				<td class="left">
-				<?
+				<?php
 					$checked=($valori["S_da_chiudere_in_garanzia"]?" checked='checked'":"");
 				?>
 					<input type="checkbox"
@@ -1455,7 +1538,7 @@
 						value="<?=$valori["S_reloaded_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$S_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1463,7 +1546,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("S_reloaded_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_S" style="display:none"<?=$locked_row?>>
@@ -1489,7 +1573,7 @@
 						value="<?=$valori["S_closed"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$S_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1497,7 +1581,8 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("S_closed"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 
@@ -1519,7 +1604,7 @@
 				</td>
 			</tr>
 
-<?
+<?php
 	$D_locked=(($_SESSION["livello"]!=1)&&($valori["D_signed"]==1)?1:0);
 	$locked_row=($D_locked?" class='locked'":"");
 	$check_locked=($D_locked?" onclick='this.blur();return false;'":"");
@@ -1563,7 +1648,7 @@
 			<tr title="Section_D" style="display:none"<?=$locked_row?>>
 				<td class="right">difetto correggibile</td>
 				<td class="left">
-			<?
+			<?php
 				if($D_locked)
 				{
 					if($valori["corrigible"]==-1)
@@ -1577,7 +1662,8 @@
 						name="corrigible"
 						value="<?=$valori["corrigible"]?>" />
 						<b><?=$value?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select id="corrigible" 
@@ -1593,20 +1679,23 @@
 							sì
 						</option>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_D" id="D2a_row" style="display:none" <?=$locked_row?>>
 				<td style="text-align:right">
 					azioni
 				</td>
-				<?if($D_locked)
+				<?php
+				if($D_locked)
 				{?>
 					<td style="text-align:left;background-color:#fff;">
 					<input type="hidden" name="D2a" value="<?=$valori["D2a"]?>" />
 					<div style="background-color:#FFF"><b><?=str_replace("\n","<br/>",$valori["D2a"])?></b>
 					</div>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<td style="text-align:left;">
@@ -1615,7 +1704,8 @@
 							cols="40"
 							rows="2"
 							class="input"<?=$input_locked?>><?=$valori["D2a"]?></textarea>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_D" id="D2b_row" style="display:none" <?=$locked_row?>>
@@ -1623,13 +1713,15 @@
 					azioni da estendere<br/>
 					ad altri sistemi
 				</td>
-				<?if($D_locked)
+				<?php
+				if($D_locked)
 				{?>
 					<td style="text-align:left;background-color:#fff;">
 					<input type="hidden" name="D2b" value="<?=$valori["D2b"]?>" />
 					<div style="background-color:#FFF"><b><?=str_replace("\n","<br/>",$valori["D2b"])?></b>
 					</div>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<td style="text-align:left;">
@@ -1638,14 +1730,15 @@
 							cols="40"
 							rows="2"
 							class="input"<?=$input_locked?>><?=$valori["D2b"]?></textarea>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_D" id="actions_responsible_id_row" 
 					style="display:none"<?=$locked_row?>>
 				<td class="right">responsabile delle azioni</td>
 				<td class="left">
-			<?
+			<?php
 				if($D_locked)
 				{
 					$value=$personale_ga[$valori["actions_responsible_id"]];
@@ -1655,7 +1748,8 @@
 						value="<?=$valori["actions_responsible_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="actions_responsible_id"
@@ -1663,15 +1757,17 @@
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ga as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["actions_responsible_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_D" id="actions_end_date_row"
@@ -1685,7 +1781,7 @@
 						value="<?=$valori["actions_end_date"]?>" 
 						onchange="" 
 						readonly="readonly" />
-			<?
+			<?php
 				if(!$D_locked)
 				{?>
 					<img src="img/calendar.png" 
@@ -1693,73 +1789,83 @@
 						alt="calendar"
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("actions_end_date"), "dd/mm/yyyy","it",1,0)' />
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_D" id="D3a_row" style="display:none" <?=$locked_row?>>
 				<td style="text-align:right">
 					Accettare allo stato <br/>(o rif. a documento attinente)
 				</td>
-				<?if($D_locked)
+				<?php
+				if($D_locked)
 				{?>
 					<td style="text-align:left;background-color:#fff;">
 					<input type="hidden" name="D3a" value="<?=$valori["D3a"]?>" />
 					<div style="background-color:#FFF"><b><?=str_replace("\n","<br/>",$valori["D3a"])?></b>
 					</div>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<td style="text-align:left;">
 					<textarea name="D3a" cols="40"
 							rows="2"
 							class="input"<?=$input_locked?>><?=$valori["D3a"]?></textarea>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_D" id="D3b_row" style="display:none" <?=$locked_row?>>
 				<td style="text-align:right">
 					Temporanea Accettazione allo stato<br/>(o rif. a documento attinente)
 				</td>
-				<?if($D_locked)
+				<?php
+				if($D_locked)
 				{?>
 					<td style="text-align:left;background-color:#fff;">
 					<input type="hidden" name="D3b" value="<?=$valori["D3b"]?>" />
 					<div style="background-color:#FFF"><b><?=str_replace("\n","<br/>",$valori["D3b"])?></b>
 					</div>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<td style="text-align:left;">
 					<textarea name="D3b" cols="40"
 							rows="2"
 							class="input"<?=$input_locked?>><?=$valori["D3b"]?></textarea>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_D" style="display:none" <?=$locked_row?>>
 				<td style="text-align:right">
 					note
 				</td>
-				<?if($D_locked)
+				<?php
+				if($D_locked)
 				{?>
 					<td style="text-align:left;background-color:#fff;">
 					<input type="hidden" name="note" value="<?=$valori["note"]?>" />
 					<div style="background-color:#FFF"><b><?=str_replace("\n","<br/>",$valori["note"])?></b>
 					</div>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<td style="text-align:left;">
 					<textarea name="note" cols="40"
 							rows="2"
 							class="input"<?=$input_locked?>><?=$valori["note"]?></textarea>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_D" style="display:none"<?=$locked_row?>>
 				<td class="right">Organization Representative</td>
 				<td class="left">
-			<?
+			<?php
 				if($D_locked)
 				{
 					$value=$personale_ga[$valori["D_org_rep_id"]];
@@ -1770,28 +1876,31 @@
 						value="<?=$valori["D_org_rep_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="D_org_rep_id" id="D_org_rep_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ga as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["D_org_rep_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_D" style="display:none"<?=$locked_row?>>
 				<td class="right">Product Assurrance Manager</td>
 				<td class="left">
-			<?
+			<?php
 				if($D_locked)
 				{
 					$value=$personale_ga[$valori["D_prod_ass_man_id"]];
@@ -1802,28 +1911,31 @@
 						value="<?=$valori["D_prod_ass_man_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="D_prod_ass_man_id" id="D_prod_ass_man_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ga as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["D_prod_ass_man_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_D" style="display:none"<?=$locked_row?>>
 				<td class="right">Customer Representative</td>
 				<td class="left">
-			<?
+			<?php
 				if($D_locked)
 				{
 					$value=$personale_ga[$valori["D_cust_rep_id"]];
@@ -1834,22 +1946,25 @@
 						value="<?=$valori["D_cust_rep_id"]?>" />
 						<b><?=mkFullName($value["grado"],$value["cognome"]
 								,$value["nome"]);?></b>
-				<?}
+				<?php
+				}
 				else
 				{?>
 					<select name="D_cust_rep_id" id="D_cust_rep_id">
 						<option value="0">
 							...seleziona
 						</option>
-					<?
+					<?php
 						foreach($personale_ami as $id=>$value)
 						{?>
 						<option value="<?=$id?>"<?=($valori["D_cust_rep_id"]==$id?" selected='selected'":"")?>>
 							<?=mkFullName($value["grado"],$value["cognome"],$value["nome"]);?>
 						</option>
-						<?}?>
+						<?php
+						}?>
 					</select>
-				<?}?>
+				<?php
+				}?>
 				</td>
 			</tr>
 			<tr title="Section_D" style="display:none"
@@ -2221,5 +2336,5 @@
 
 //]]>
 	</script>
-	<?
+	<?php
 ?>

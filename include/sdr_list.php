@@ -1,4 +1,4 @@
-<?
+<?php
 	require_once("include/sdr_const.php");
 	$prel_evals[0]="TBD";
 
@@ -27,6 +27,12 @@
 	{
 		$filtro=1;
 		$addlink="&amp;filtro=1";
+		if(strlen(trim($_GET["desc"])))
+		{
+			$desc=trim($_GET["desc"]);
+			$where.=" AND defect_type like'%".$desc."%'";
+			$addlink.="&amp;desc=$desc";
+		}
 		if(strlen($_GET["da"]))
 		{
 			$da=$_GET["da"];
@@ -152,7 +158,8 @@
 				</span>
 			</td>
 		</tr>
-	<?}
+	<?php
+	}
 	else
 	{?>
 		<form id="edit_form" method="get" action="<?=$self?>">
@@ -160,7 +167,8 @@
 			<input type="hidden" name="id" value="" />
 		</form>
 		<table class="plot">
-	<?}?>
+	<?php
+	}?>
 		<tr class="header" id="searchrow" style="vertical-align:middle;display:<?=($filtro==1?'table-row':'none')?>">
 			<td colspan="8">
 				<form name="filter_form" method="get" action="<?=$self?>">
@@ -177,19 +185,21 @@
 						style="height:25px;vertical-align:middle;"
 						onclick='showCalendar("", this,document.getElementById("a"), "dd/mm/yyyy","it",1,0)' />
 					tipo&nbsp;<select name="prel_eval">
-	<?
+	<?php
 	foreach($prel_evals as $id=>$value)
 	{?>
 						<option value="<?=$id?>"<?=($prel_eval==$id?" selected='selected'":"")?>>
 							<?=$value?>
 						</option>
-	<?}?>
+	<?php
+	}?>
 					</select>
 					&nbsp;status&nbsp;<select name="status">
 						<option value="-1"<?=($status==-1?" selected='selected'":"")?>></option>
 						<option value="0"<?=($status==0?" selected='selected'":"")?>>aperto</option>
 						<option value="1"<?=($status==1?" selected='selected'":"")?>>chiuso</option>
 					</select>
+					&nbsp;desc&nbsp;<input name="desc" id="desc" value="<?=$desc?>" type="text" size="10" />
 					&nbsp;<img src="img/filtro.png" 
 						style="vertical-align:middle;width:16px;"
 						alt="filtra" 
@@ -206,6 +216,7 @@
 							filter_form.a.value='';
 							filter_form.status.value=-1;
 							filter_form.prel_eval.value=-1;
+							filter_form.desc.value='';
 							filter_form.submit()" />
 				</form>
 			</td>
@@ -222,7 +233,7 @@
 			<td onclick="<?=$onclick["tipo"]?>">tipo<?=$icons["tipo"]?></td>
 			<td onclick="<?=$onclick["chiusura"]?>">chiusura<?=$icons["chiusura"]?></td>
 		</tr>
-	<?
+	<?php
 
 
 
@@ -267,7 +278,7 @@
 					<?=my_date_format($row["closure_date"],"d/m/Y")?>
 				</td>
 			</tr>
-		<?
+		<?php
 	}
 	if($_SESSION["livello"]>0)
 	{
@@ -282,11 +293,13 @@
 			</td>
 		</tr>
 		</table>
-	<?}
+	<?php
+	}
 	else
 	{?>
 		</table>
-	<?}?>
+	<?php
+	}?>
 	</div>
-	<?
+	<?php
 ?>

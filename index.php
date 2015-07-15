@@ -169,7 +169,7 @@ else
 		<table border="0" cellspacing="0" cellpadding="0" style="margin-left:auto;margin-right:auto;">
     		<tr>
         		<td style="text-align:center;height:200px;vertical-align:middle">
-	<?
+	<?php
 	if(!$expired)
 	{
 		?>
@@ -205,7 +205,7 @@ else
 		<script type="text/javascript">
 			document.getElementById("loginuser").focus();
 		</script>
-		<?
+		<?php
 	}
 	else
 	{
@@ -240,14 +240,14 @@ else
         <script type="text/javascript">
 			document.getElementById("newpass").focus();
         </script>
-        <?
+        <?php
 	}
 ?>
 		</td>
     </tr>
 </table>
 </div>
-<?
+<?php
 }
 
 if(!$report)
@@ -267,7 +267,7 @@ if(!$report)
 		</script>
 		</body>
 	</html>
-	<?
+	<?php
 }
 
 
@@ -289,7 +289,7 @@ function display_admin_nav($livello)
 	<div id="admin_nav">
 		<table class="admin_nav">
 		<tr style="height:20px">
-	<?
+	<?php
 	foreach($ops as $k=>$v)
 	{
 		$minlevel=(int)substr($k,0,1);
@@ -305,12 +305,13 @@ function display_admin_nav($livello)
 					onclick="redirect('<?=$self?>&amp;op=<?=$k?>');">
 				<?=$v?>
 			</td>
-		<?}
+		<?php
+		}
 	}?>
 		</tr>
 		</table>
 		</div>
-	<?
+	<?php
 }
 
 /*
@@ -346,11 +347,12 @@ function logged_header($op,$titolo1,$titolo2)
 		$giorno=date("d/m/Y");
 	?>
 		<div id="header">
-	<?
+	<?php
 		if($_SESSION["livello"]>0)
 		{?>
 			<div style="position:absolute;right:50px;"><?=reminder(); ?></div>
-		<?}?>
+		<?php
+		}?>
 			<form action="<?=$self?>" method="post" style="margin: 0px;">
 			<table class="tab_header">
 				<tr style="height:30px;">
@@ -369,7 +371,8 @@ function logged_header($op,$titolo1,$titolo2)
 					onmouseover="style.cursor='pointer';style.backgroundColor='#eee';"
 					onmouseout="style.backgroundColor='#fff'"
 				value="<?=$_SESSION["OFTS_EOFTS"]?>" />
-			<?/*
+			<?php
+			/*
 			if($_SESSION["livello"]<1)
 			{?>
 			<input type="button" style="height:25px;vertical-align:middle;text-align:center"
@@ -377,7 +380,8 @@ function logged_header($op,$titolo1,$titolo2)
 					onmouseout="style.backgroundColor='#fff'"
 					onclick="redirect('<?=$self?>');"
 					value="reports" />
-			<?}*/
+			<?php
+			}*/
 			if($op=="display")
 			{?>
 				<input type="button"
@@ -386,7 +390,8 @@ function logged_header($op,$titolo1,$titolo2)
 						disabled="disabled" value="<?=$tp?>" />
 
 					<input type="hidden" name="giorno" value="<?=$giorno?>" />
-			<?}?>
+			<?php
+			}?>
 			<input type="hidden" name="op" value="<?=$op?>" />
 		</td>
 		<td style="width:<?=$width?>;text-align:center;height:<?=$height?>px;vertical-align:middle;
@@ -402,14 +407,14 @@ function logged_header($op,$titolo1,$titolo2)
 	<tr style="height:<?=$height?>px;">
 		<td style="width:<?=$width?>;padding-left:5px;text-align:left;white-space: nowrap;">
 
-	<?
+	<?php
 		if($op=="display")
 		{
 	?>
 			<a href="<?=$_SERVER["PHP_SELF"]?>?giorno=<?=$ieri?>">
 				&lt;-- <?=$ieriTesto?>
 			</a>
-	<?
+	<?php
 		}
 		elseif($op=="adm_ntpitp")
 		{
@@ -422,7 +427,8 @@ function logged_header($op,$titolo1,$titolo2)
 			<a href="<?=$_SERVER["PHP_SELF"]?>?op=adm_ntpitp&amp;anno=<?=($anno-1)?>">
 				&lt;-- <?=($anno-1)?>
 			</a>
-			<?}
+			<?php
+			}
 		}
 		elseif($op=="ore_istruttori")
 		{
@@ -442,12 +448,13 @@ function logged_header($op,$titolo1,$titolo2)
 			<a href="<?=$_SERVER["PHP_SELF"]?>?op=ore_istruttori&amp;anno=<?=$anno_prec?>&amp;mese=<?=$mese_prec?>">
 				&lt;-- <?=($mesi[$mese_prec-1]." $anno_prec")?>
 			</a>
-			<?}
+			<?php
+			}
 		}
 	?>
 		</td>
 		<td style="width:<?=$width?>;text-align:center;white-space:nowrap;vertical-align:middle;font-size:16px;">
-	<?
+	<?php
 		if($op=="display")
 		{
 	?>
@@ -461,27 +468,30 @@ function logged_header($op,$titolo1,$titolo2)
 				style="height:25px;vertical-align:middle;"
 				onclick='showCalendar("", this,document.getElementById("giorno_cal"), "dd/mm/yyyy","it",1,0)' />
 			<?="(sett $sett)"?>
-	<?
+	<?php
 		}
 		elseif($op=="adm_ntpitp")
 		{?>
 			<span style="font-size:18px"><?=$anno?></span>
-		<?}
+		<?php
+		}
 		else
 		{?>
 			<span style="font-size:18px"><?=$titolo2?></span>
-		<?}
+		<?php
+		}
 	?>
 		</td>
 		<td style="width:<?=$width?>;padding-right:5px;text-align:right;white-space: nowrap;">
-	<?
+	<?php
 		if($op=="display")
 		{
 	?>
 			<a href="<?=$_SERVER["PHP_SELF"]?>?giorno=<?=$domani?>">
 				<?=$domaniTesto?> --&gt;
 			</a>
-		<?}
+		<?php
+		}
 		elseif($op=="adm_ntpitp")
 		{
 			if($anno<2100)
@@ -489,7 +499,8 @@ function logged_header($op,$titolo1,$titolo2)
 			<a href="<?=$_SERVER["PHP_SELF"]?>?op=adm_ntpitp&amp;anno=<?=($anno+1)?>">
 				<?=($anno+1)?> --&gt;
 			</a>
-			<?}
+			<?php
+			}
 		}
 		elseif($op=="ore_istruttori")
 		{
@@ -501,13 +512,14 @@ function logged_header($op,$titolo1,$titolo2)
 			<a href="<?=$_SERVER["PHP_SELF"]?>?op=ore_istruttori&amp;anno=<?=$anno_succ?>&amp;mese=<?=$mese_succ?>">
 				<?=($mesi[$mese_succ-1]." $anno_succ")?> --&gt;
 			</a>
-			<?}
+			<?php
+			}
 		}
 
 		?>
 		</td>
 	</tr>
-	<?
+	<?php
 }
 
 function close_logged_header($livello)
@@ -516,12 +528,12 @@ function close_logged_header($livello)
 			</table>
 		</form>
 	</div>
-	<?
+	<?php
 //	if($livello>0)
 		display_admin_nav($livello);
 	?>
 	<div id="content">
-	<?
+	<?php
 }
 
 function do_header($is_logged,$expired,$level,$op,$ore_lav)
@@ -553,7 +565,7 @@ function do_header($is_logged,$expired,$level,$op,$ore_lav)
 	<div id="message" style="z-index:4;position:<?=($ie?"absolute":"fixed")?>;top:60px;width:100%;color: red; font-size: 110%; font-weight: normal; white-space:nowrap;padding-right:10px;text-align:<?=($is_logged?"right":"center")?>;">
 		<?=$message?>
 	</div>
-	<?
+	<?php
 }
 
 function reminder()
@@ -631,7 +643,7 @@ function reminder()
 					overflow-x: auto;
 					padding:5px 30px 5px 10px;
 					border:1px solid #ccc">
-		<?
+		<?php
 		krsort($reminders);
 		foreach($reminders as $k=>$timeout)
 		{
@@ -640,11 +652,11 @@ function reminder()
 			<p style="text-align:left;white-space:nowrap;margin:0px;color:<?=($status==1?"#AA0":"#ff0000")?>">
 				<?=sprintf("%s - %s - %d days - %s",$system,$codice,$exceed,$timeout)?>
 			</p>
-			<?
+			<?php
 		}
 		?>
 		</div>
-		<?
+		<?php
 	}
 
 }
@@ -716,4 +728,3 @@ function aggiustaRighe($valori,$maxRows,$limit)
 		}
 	}
 }
-?>
